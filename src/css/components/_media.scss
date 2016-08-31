@@ -1,0 +1,35 @@
+.media {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	line-height: 23px;
+}
+
+	.media__heading {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+		line-height: 23px;
+		margin-bottom: 0;
+		letter-spacing: -.2px;
+	}
+
+	.media__bottom {
+		margin-top: 58px;
+	}
+
+	.media__list-item {
+		span {
+			padding-left: 20px;
+			display: inline-block;
+		}
+	}
+
+	.media__list {
+		li {
+			line-height: 34px;
+			&:before {
+				content: '•';
+				display: inline-block;
+				position: absolute;
+			}
+		}
+	}

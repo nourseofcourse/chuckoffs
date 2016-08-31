@@ -1,0 +1,36 @@
+.band {
+	display: block;
+	clear: both;
+	overflow: hidden;
+}
+
+	.band--tint {
+		background-color: $tint;
+	}
+
+	.band--small {
+		padding: 70px 0 45px;
+	}
+
+	.band--video {
+		background-image: url(../images/video-bg.jpg);
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		height: 252px;
+
+		@media (min-width: $screen-md-min) {
+			background-image: url(../images/video-bg-xlg.jpg);
+			height: 462px;
+		}
+	}
+
+	.band--padded {
+		margin: 50px 0;
+	}
+
+	.band__headline {
+		margin-top: 0;
+		margin-bottom: 55px;
+	}

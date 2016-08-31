@@ -1,0 +1,68 @@
+@font-face {
+	font-family: 'Trade Gothic Next LT';
+	src: url('../fonts/TradeGothicNextLTPro-HvCn.eot');
+	src: url('../fonts/TradeGothicNextLTPro-HvCn.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/TradeGothicNextLTPro-HvCn.woff2') format('woff2'),
+		url('../fonts/TradeGothicNextLTPro-HvCn.woff') format('woff'),
+		url('../fonts/TradeGothicNextLTPro-HvCn.ttf') format('truetype'),
+		url('../fonts/TradeGothicNextLTPro-HvCn.svg#TradeGothicNextLTPro-HvCn') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+body,
+html {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-moz-font-feature-settings: "liga" on;
+}
+
+.wrapper {
+	@include container-fixed;
+	@media (min-width: $screen-sm-min) {
+		width: $container-sm;
+	}
+	@media (min-width: $screen-md-min) {
+		width: $container-md;
+	}
+	@media (min-width: $screen-lg-min) {
+		width: $container-lg;
+	}
+	@media (min-width: $screen-xlg-min) {
+		width: $container-xlg;
+	}
+}
+
+header {
+	h1 {
+		margin-top: 0;
+	}
+}
+
+a {
+	-webkit-transition: all 200ms linear;
+	   -moz-transition: all 200ms linear;
+		  -ms-transition: all 200ms linear;
+			 -o-transition: all 200ms linear;
+			    transition: all 200ms linear;
+}
+.btn-primary {
+	-webkit-transition: all 200ms linear;
+	   -moz-transition: all 200ms linear;
+		  -ms-transition: all 200ms linear;
+			 -o-transition: all 200ms linear;
+			    transition: all 200ms linear;
+	&:hover {
+		background-color: #383534;
+		border-color: #383534;
+		position: relative;
+		bottom: 1px;
+	}
+}
+
+.btn-nav {
+	&:hover {
+		bottom: 0;
+	}
+}

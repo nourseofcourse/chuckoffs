@@ -1,0 +1,52 @@
+$navbar-margin-bottom: 0px;
+
+$font-size-base: 21px;
+$font-size-large: 19px;
+$font-size-small: 15px;
+
+$font-size-h1: 65px;
+$font-size-h2: 56px;
+$font-size-h3: 49px;
+$font-size-h4: 42px;
+$font-size-h5: 32px;
+$font-size-h6: 19px;
+
+$font-stack: 'Trade Gothic Next LT', 'Open Sans', helvetica, sans-serif;
+$headings-font-family: $font-stack;
+$font-family-sans-serif: $font-stack;
+
+$brand-primary: #FD4040;
+$text-color: #4A4A4A;
+$tint: #F5F6F6;
+
+$border-radius-base:        3px;
+$border-radius-large:       6px;
+$border-radius-small:       2px;
+
+$padding-base-vertical:     18px;
+$padding-base-horizontal:   32px;
+
+// Basics of a navbar
+$navbar-height:                    60px;
+$navbar-padding-horizontal:        0;
+$navbar-padding-vertical:          20px;
+
+$navbar-default-color:             #4A4A4A;
+$navbar-default-bg:                #fff;
+$navbar-default-border:            transparent;
+$navbar-line-height: 19px;
+$navbar-font-size: 17px;
+$navbar-letter-spacing: .36px;
+$nav-link-padding: 10px 20px;
+
+$navbar-btn-font-size: 17px;
+$navbar-btn-line-height: 21px;
+
+// Navbar links
+$navbar-default-link-color:                #4A4A4A;
+$navbar-default-link-hover-color:          #FD4040;
+$navbar-default-link-hover-bg:             transparent;
+$navbar-default-link-active-color:         #FD4040;
+$navbar-default-link-active-bg:            transparent;
+$navbar-default-link-disabled-color:       #ccc;
+$navbar-default-link-disabled-bg:          transparent;

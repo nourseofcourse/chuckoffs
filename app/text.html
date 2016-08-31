@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>1Face - Changing the World 1Face at a time</title>
+
+	<link rel="stylesheet" href="assets/css/1face.css?v=0.0.2">
+
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:800,400' rel='stylesheet' type='text/css'>
+	<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel="stylesheet" type="text/css" />
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<button class="js-start-course">Start Course</button>
+
+	<div id="buffer" data-player-index="4"></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://video.kelbyone.com/libraries/Vp0WE0Qj.js"></script>
+	<script>
+	(function() {
+		var playlist;
+		var playerInstance = jwplayer('player');
+		var promise = $.getJSON('http://video.kelbyone.com/feeds/WyFkwEzw.json');
+
+		promise.done(function(data) {
+			playlist = data;
+			console.log('hi');
+		});
+		alert('done');
+	})(jQuery);
+		(function() {
+			"use strict";
+
+	  	var coursePlayer = {
+	      endpoint: undefined,
+				player: undefined,
+				playlist: 'http://video.kelbyone.com/feeds/WyFkwEzw.json',
+				container: document.getElementById('buffer'),
+				item: 0,
+
+				init: function init() {
+					this.item = this.container.dataset.playerIndex;
+					this.setupPlayer();
+					this.registerEvents();
+				},
+
+				registerEvents: function registerEvents() {
+					var _this = this;
+
+					jwplayer().on('playlistItem', function(index, item) {
+						_this.changedLesson(index, item);
+					});
+				},
+
+				setupPlayer: function setupPlayer() {
+					var _this = this;
+
+					_this.player = jwplayer('buffer').setup({
+						playlist: _this.playlist,
+					}).playlistItem(this.item);
+				},
+
+				changedLesson: function changedLesson(index, item) {
+					console.log(index);
+					console.log(item);
+				},
+
+				lessonProgress: function lessonProgress(position) {
+					var duration = this.lessonDuration(),
+							percentage = Math.ceil((position / duration) * 100);
+			    return percentage;
+				},
+
+				lessonDuration: function lessonDuration() {
+					var duration = jwplayer().getDuration();
+					return duration;
+				},
+
+			}
+
+			$(document).ready(function () {
+				if(typeof jwplayer() != 'undefined') {
+					coursePlayer.init();
+				}
+		  });
+		})(jQuery);
+
+	</script>
+</body>
+</html>
