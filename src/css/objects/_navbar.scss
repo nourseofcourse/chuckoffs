@@ -198,6 +198,9 @@
 // the nav the full height of the horizontal nav (above 768px).
 .navbar-nav {
   margin: ($navbar-padding-vertical / 2) (-$navbar-padding-horizontal);
+  > li {
+    outline: none;
+  }
   > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -368,18 +371,26 @@
   .navbar-nav {
     > li > a {
       color: $navbar-default-link-color;
-      &:hover,
-      &:focus {
+      &:hover {
         color: $navbar-default-link-hover-color;
         background-color: $navbar-default-link-hover-bg;
+      }
+      &:focus {
+        color: inherit;
+        outline: none;
+        background: transparent;
       }
     }
     > .active > a {
       &,
-      &:hover,
-      &:focus {
+      &:hover{
         color: $navbar-default-link-active-color;
         background-color: $navbar-default-link-active-bg;
+      }
+      &:focus {
+        color: inherit;
+        outline: none;
+        background: transparent;
       }
     }
     > .disabled > a {

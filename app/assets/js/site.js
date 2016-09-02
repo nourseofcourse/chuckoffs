@@ -107,4 +107,45 @@ $('[data-plugin="scrollTo"]').on('click', function(e) {
 $('[data-plugin="selectpicker"]').selectpicker({});
 
 
+  $('.navbar-fixed-top').scrollspy({
+    offset: 60
+  });
+
 }();
+
+
+$(document).ready(function() {
+		// form submission
+		$('.mail-form').submit(function(e) {
+			e.preventDefault();
+			var postdata = $('.mail-form').serialize();
+			console.log(postdata);
+			$.ajax({
+				type: 'POST',
+				url: 'mailchimp/submit.php',
+				data: postdata,
+				dataType: 'json',
+				success: function(json) {
+					if(json.valid == 0) {
+						$('.success-message').hide();
+						$('.error-message').hide();
+						$('.error-message').html(json.message);
+						$('.error-message').fadeIn('fast', function(){
+							$('.mail-form').addClass('animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+								$(this).removeClass('animated shake');
+							});
+						});
+					}
+					else {
+						$('.error-message').hide();
+						$('.success-message').hide();
+						$('.mail-form').hide();
+						$('.success-message').html(json.message);
+						$('.success-message').fadeIn('fast', function(){
+							$('.top-content').backstretch("resize");
+						});
+					}
+				}
+			});
+		});
+});

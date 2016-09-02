@@ -18,6 +18,48 @@ html {
 	-moz-font-feature-settings: "liga" on;
 }
 
+body {
+	margin-top: $navbar-height;
+}
+
+@media (max-width: $screen-xs-max) {
+	.navbar-header {
+		float: left;
+	}
+	.navbar-right {
+		float: right;
+		li {
+			display: none;
+			height: 45px;
+		}
+		.nav-link__btn {
+			display: block;
+		}
+	}
+	
+	.navbar-nav {
+		margin: 0;
+		margin-top: 12px;
+	}
+	.navbar-btn {
+		margin-bottom: 0;
+		margin: 0;
+
+		.btn {
+			font-size: 10px;
+			line-height: 10px;
+			letter-spacing: .21px;
+			padding: 12px 13px;
+
+			-webkit-border-radius: 2.5px;
+			   -moz-border-radius: 2.5px;
+				  -ms-border-radius: 2.5px;
+					 -o-border-radius: 2.5px;
+					    border-radius: 2.5px;
+		}
+	}
+}
+
 .wrapper {
 	@include container-fixed;
 	@media (max-width: $screen-xs-max) {
@@ -69,4 +111,8 @@ a {
 	&:hover {
 		bottom: 0;
 	}
+}
+
+.alert-danger {
+	font-size: 18px;
 }
