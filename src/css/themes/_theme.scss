@@ -20,6 +20,10 @@ html {
 
 .wrapper {
 	@include container-fixed;
+	@media (max-width: $screen-xs-max) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 	@media (min-width: $screen-sm-min) {
 		width: $container-sm;
 	}

@@ -18,19 +18,59 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 
-		height: 252px;
+		height: 231px;
 
+		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+			background-image: url(../images/video-bg-sm.jpg);
+			height: 462px;
+		}
 		@media (min-width: $screen-md-min) {
 			background-image: url(../images/video-bg-xlg.jpg);
-			height: 462px;
+		}
+	}
+
+	.band--tech {
+
+		@media only screen and (max-width: $screen-xs-max) {
+			padding: 35px 0 47px;
+			background-size: 180px auto;
+			background-position: -86px 96px !important;
+		}
+
+		@media (max-width: $screen-sm-max) {
+			overflow: hidden;
+			background-image: url(../images/the-tech.png);
+			background-repeat: no-repeat;
+			background-position: -150px 185px;		
+		}
+
+		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+			padding: 70px 0 95px;
 		}
 	}
 
 	.band--padded {
-		margin: 50px 0;
+		@media (min-width: $screen-md-min) {
+			margin: $section-margin 0;
+		}
 	}
 
 	.band__headline {
 		margin-top: 0;
 		margin-bottom: 55px;
+	}
+
+	.band__headline--tech {
+		@media (max-width: $screen-xs-max) {
+			font-size: 36px;
+			line-height: 37px;
+		}
+		@media (max-width: $screen-md-max) {
+			text-align: center;
+		}
+
+		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+			font-size: 73px;
+			line-height: 74px;
+		}
 	}

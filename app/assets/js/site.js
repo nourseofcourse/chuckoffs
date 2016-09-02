@@ -68,19 +68,6 @@ ta.prototype.parse=function(){for(var a=this.o.length,b=0;b<a;b++){var c=this.o[
 W.prototype.load=function(a){var b=this.c.id,c=this.a.k,d=this;b?(c.__webfontfontdeckmodule__||(c.__webfontfontdeckmodule__={}),c.__webfontfontdeckmodule__[b]=function(b,c){for(var g=0,l=c.fonts.length;g<l;++g){var h=c.fonts[g];d.X.push(new E(h.name,ea("font-weight:"+h.weight+";font-style:"+h.style)))}a(d.X)},y(this.a,this.B(b),function(b){b&&a([])})):a([])};function X(a,b){this.a=a;this.c=b}X.prototype.B=function(a){return(this.c.api||"https://use.typekit.net")+"/"+a+".js"};X.prototype.load=function(a){var b=this.c.id,c=this.a.k;b?y(this.a,this.B(b),function(b){if(b)a([]);else if(c.Typekit&&c.Typekit.config&&c.Typekit.config.fn){b=c.Typekit.config.fn;for(var e=[],f=0;f<b.length;f+=2)for(var g=b[f],l=b[f+1],h=0;h<l.length;h++)e.push(new E(g,l[h]));try{c.Typekit.load({events:!1,classes:!1,async:!0})}catch(k){}a(e)}},2E3):a([])};function Y(a,b){this.a=a;this.c=b}Y.prototype.B=function(a,b){var c=v(this.a),d=(this.c.api||"fast.fonts.net/jsapi").replace(/^.*http(s?):(\/\/)?/,"");return c+"//"+d+"/"+a+".js"+(b?"?v="+b:"")};
 Y.prototype.load=function(a){function b(){if(e["__mti_fntLst"+c]){var d=e["__mti_fntLst"+c](),g=[],l;if(d)for(var h=0;h<d.length;h++){var k=d[h].fontfamily;void 0!=d[h].fontStyle&&void 0!=d[h].fontWeight?(l=d[h].fontStyle+d[h].fontWeight,g.push(new E(k,l))):g.push(new E(k))}a(g)}else setTimeout(function(){b()},50)}var c=this.c.projectId,d=this.c.version;if(c){var e=this.a.k;y(this.a,this.B(c,d),function(c){c?a([]):b()}).id="__MonotypeAPIScript__"+c}else a([])};function Aa(a,b){this.a=a;this.c=b}Aa.prototype.load=function(a){var b,c,d=this.c.urls||[],e=this.c.families||[],f=this.c.testStrings||{},g=new z;b=0;for(c=d.length;b<c;b++)x(this.a,d[b],A(g));var l=[];b=0;for(c=e.length;b<c;b++)if(d=e[b].split(":"),d[1])for(var h=d[1].split(","),k=0;k<h.length;k+=1)l.push(new E(d[0],h[k]));else l.push(new E(d[0]));C(g,function(){a(l,f)})};var Z=new na(window);Z.q.t.custom=function(a,b){return new Aa(b,a)};Z.q.t.fontdeck=function(a,b){return new W(b,a)};Z.q.t.monotype=function(a,b){return new Y(b,a)};Z.q.t.typekit=function(a,b){return new X(b,a)};Z.q.t.google=function(a,b){return new ya(b,a)};var $={load:n(Z.load,Z)};"function"===typeof define&&define.amd?define(function(){return $}):"undefined"!==typeof module&&module.exports?module.exports=$:(window.WebFont=$,window.WebFontConfig&&Z.load(window.WebFontConfig));}();
 !function() {
-	$('.eq').matchHeight();
-	$('#toggle').click(function() {
-  	$(this).toggleClass('active');
-  	$('#overlay').toggleClass('open');
-		$('.navbar').toggleClass('open-overlay');
-  });
-	$('.product__img').matchHeight();
-	$('.eqg').matchHeight();
-	$('.twitter-icon').hover(function() {
-		$('.twitter-text').addClass('text-underline');
-	}, function() {
-		$('.twitter-text').removeClass('text-underline');
-	});
 
 	$('.js-play-btn').magnificPopup({
 
@@ -92,19 +79,23 @@ Y.prototype.load=function(a){function b(){if(e["__mti_fntLst"+c]){var d=e["__mti
 		fixedContentPos: false
 	});
 
-	WebFontConfig = {
-  google: {
-    families: ['Open Sans:400,800', 'Lato:400,700,300']
-  	}
-	};
-
+	//jQuery to collapse the navbar on scroll
 	$(window).scroll(function() {
-  if ($(document).scrollTop() > 50) {
-    $('.navbar').addClass('shrink');
-  } else {
-    $('.navbar').removeClass('shrink');
-  }
-});
+			if ($(".navbar").offset().top ) {
+					$(".navbar-fixed-top").addClass("top-nav-collapse");
+			} else {
+					$(".navbar-fixed-top").removeClass("top-nav-collapse");
+			}
+	});
+
+	$('.navbar-nav a').bind('click', function(event) {
+			var $anchor = $(this);
+			$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top - 60
+			}, 1500);
+			event.preventDefault();
+	});
+
 
 $('[data-plugin="scrollTo"]').on('click', function(e) {
 	e.preventDefault();

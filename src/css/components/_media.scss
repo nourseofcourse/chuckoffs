@@ -2,6 +2,11 @@
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	line-height: 23px;
+
+	@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 }
 
 	.media__heading {
@@ -14,6 +19,14 @@
 
 	.media__bottom {
 		margin-top: 58px;
+
+		@media only screen and (max-width: $screen-xs-max) {
+			margin-top: 0;
+		}
+
+		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+			margin-top: 35px;
+		}
 	}
 
 	.media__list-item {
@@ -26,6 +39,18 @@
 	.media__list {
 		li {
 			line-height: 34px;
+
+			@media only screen and (max-width: $screen-xs-max) {
+				font-size: 10px;
+				line-height: 21px;
+				letter-spacing: -.11px;
+			}
+
+			@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+				font-size: 21px;
+				line-height: 42px;
+				letter-spacing: -.22px;
+			}
 			&:before {
 				content: '•';
 				display: inline-block;

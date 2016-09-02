@@ -18,5 +18,8 @@
   "dependencies": {
     "jquery": "^3.0.0",
     "bootstrap-js-components": "^3.3.4"
+  },
+  "devDependencies": {
+    "jquery": "^3.1.0"
   }
 }
